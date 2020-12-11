@@ -1,8 +1,8 @@
-package LinkedLists;
+package linkedlists;
 
 public class IntegerNode implements Comparable<IntegerNode>{
-    IntegerNode next;
-    int element;
+    private IntegerNode next;
+    private int element;
     public IntegerNode(int element){
         this.element=element;
     }
@@ -31,6 +31,14 @@ public class IntegerNode implements Comparable<IntegerNode>{
             return -1;
         }else{
             return 0;
+        }
+    }
+
+    public boolean equals(IntegerNode x){
+        if(this.element==x.element){
+            return true;
+        }else{
+            return false;
         }
     }
 }
