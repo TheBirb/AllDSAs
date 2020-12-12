@@ -3,12 +3,21 @@ package graphs;
 public class test {
 
     public static void main(String[] args) {
-        UndirectedGraph g= new UndirectedGraph(5);
-        g.addEdge(1,2);
-        g.addEdge(2,3);
-        g.addEdge(2,4);
-        DepthFirstSearch d= new DepthFirstSearch(g,1);
-        
+        test n= new test();
+        String a="a";
+        String b="b";
+        System.out.println(n.compare(a,b));
 
+    }
+
+    public int compare(String a, String b){
+        int cmp= a.compareTo(b);
+        if(cmp>0){
+            return 1;
+        }else if(cmp<0){
+            return -1;
+        }else{
+            return cmp;
+        }
     }
 }

@@ -21,7 +21,7 @@ public class IntegerLinkedList implements Iterable{
      * Method used to add elements in front of the LinkedList
      * @param element, integer
      */
-    public void AddToFront(int element){
+    public void addToFront(int element){
         IntegerNode insert= new IntegerNode(element);
         if(first==null){//list is empty
             first=insert;
@@ -38,7 +38,7 @@ public class IntegerLinkedList implements Iterable{
      * Method used to add elements at the rear of the LinkedList
      * @param element, integer
      */
-    public void AddToRear(int element){
+    public void addToRear(int element){
         IntegerNode insert= new IntegerNode(element);
         if(first==null){
             first=insert;
@@ -55,7 +55,7 @@ public class IntegerLinkedList implements Iterable{
      * Adds elements to the linked list in Ascending order
      * @param element, integer
      */
-    public void AddInAscendingOrder(int element){
+    public void addInAscendingOrder(int element){
         IntegerNode insert= new IntegerNode(element);
         if(first==null){//list is empty
             first=insert;
@@ -93,7 +93,7 @@ public class IntegerLinkedList implements Iterable{
      * Adds elements to the linked list in Ascending order
      * @param element, integer
      */
-    public void AddInDescendingOrder(int element){
+    public void addInDescendingOrder(int element){
         IntegerNode insert= new IntegerNode(element);
         if(first==null){//empty list
             first=insert;
