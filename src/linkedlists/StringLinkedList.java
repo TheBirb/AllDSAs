@@ -14,6 +14,10 @@ public class StringLinkedList {
        this.count=0;
     }
 
+    /**
+     * Method used to add an element to the head of the list
+     * @param element
+     */
     public void addToFront(String element){
         StringNode insert= new StringNode(element);
         if(first==null){
@@ -25,6 +29,10 @@ public class StringLinkedList {
         }
     }
 
+    /**
+     * Method used to add an element to the rear of the list
+     * @param element
+     */
     public void addToRear(String element){
         StringNode insert= new StringNode(element);
         if(first==null){
@@ -35,6 +43,10 @@ public class StringLinkedList {
         last=insert;
     }
 
+    /**
+     * Method used to add an element in Ascending Order
+     * @param element
+     */
     public void addInAscendingOrder(String element){
         StringNode insert= new StringNode(element);
         if(first==null){
@@ -67,6 +79,11 @@ public class StringLinkedList {
             }
         }
     }
+
+    /**
+     * Method used to add an element in Descending order
+     * @param element
+     */
     public void addInDescendingOrder(String element){
         StringNode insert= new StringNode(element);
         if(first==null){
@@ -100,6 +117,10 @@ public class StringLinkedList {
         }
     }
 
+    /**
+     * Method used to delete an element from the list
+     * @param element
+     */
     public void delete(String element){
         if(!contains(element))throw new NoSuchElementException();
         StringNode prev=null;
@@ -124,6 +145,12 @@ public class StringLinkedList {
             count--;
         }
     }
+
+    /**
+     * Method used to know if an element is in the list
+     * @param element
+     * @return boolean
+     */
     public boolean contains(String element){
         StringNode actual=first;
         while(actual!=null){
@@ -141,6 +168,11 @@ public class StringLinkedList {
     public boolean isEmpty(){
         return first==null;
     }
+
+    /**
+     * Method used to convert the list into a String
+     * @return String containing the list
+     */
     @Override
     public String toString(){
         StringNode actual=first;
@@ -152,7 +184,7 @@ public class StringLinkedList {
         out+="]";
         return out;
     }
-
+    //Test client
     public static void main(String[] args) {
         StringLinkedList list= new StringLinkedList();
         list.addInDescendingOrder("a");
