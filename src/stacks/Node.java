@@ -1,15 +1,15 @@
 package stacks;
 
-public class StackNode<T> {
+public class Node<T> {
     //Parameters
-    private StackNode next;
+    private Node next;
     private T element;
 
     /**
      * Constructor
      * @param element
      */
-    public StackNode(T element){
+    public Node(T element){
         this.element=element;
     }
 
@@ -17,7 +17,7 @@ public class StackNode<T> {
      * Method used to set the next node
      * @param next
      */
-    public void setNext(StackNode next) {
+    public void setNext(Node next) {
         this.next = next;
     }
 
@@ -25,7 +25,7 @@ public class StackNode<T> {
      * Method used to get the next node
      * @return next node
      */
-    public StackNode getNext() {
+    public Node getNext() {
         return next;
     }
 

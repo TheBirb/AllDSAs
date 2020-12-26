@@ -39,7 +39,7 @@ public class Stack<E> {
                 check();
                 return ret;
             }else{
-                throw new EmptyCollectionException();
+                throw new EmptyCollectionException("Stack");
             }
         }catch (EmptyCollectionException e){
             e.printStackTrace();

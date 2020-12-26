@@ -1,10 +1,8 @@
 package stacks;
 
-import java.util.LinkedList;
-
 public class LinkedArrayStack<T> {
     //Parameters
-    private StackNode<T> top;
+    private Node<T> top;
     private int count;
 
     /**
@@ -20,7 +18,7 @@ public class LinkedArrayStack<T> {
      * @param element
      */
     public void push(T element){
-        StackNode insert= new StackNode(element);
+        Node insert= new Node(element);
         if(isEmpty()){
             top=insert;
         }else{
@@ -71,7 +69,7 @@ public class LinkedArrayStack<T> {
      * @return
      */
     public String toString(){
-        StackNode actual=top;
+        Node actual=top;
         String ret="[";
         while(actual!=null){
             ret+=actual.getElement()+", ";
