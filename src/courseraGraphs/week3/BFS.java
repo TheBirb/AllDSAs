@@ -1,16 +1,18 @@
 package courseraGraphs.week3;
 
+import javax.sound.sampled.Line;
 import java.util.*;
 
 public class BFS {
 
-    private static int distance(ArrayList<Integer>[] adj, int s, int t) {
+
+    private static int[] distance(ArrayList<Integer>[] adj, int s, int t) {
         int ret=-1;
         int[] dist= new int[adj.length];
-
+        int[] prev= new int[adj.length];
         for (int i=0;i<dist.length;i++){
             dist[i]=-1;
-
+            prev[i]=-1;
         }
 
         Queue<Integer> queue= new Queue<Integer>() {
@@ -108,6 +110,7 @@ public class BFS {
         };
         queue.add(s);
         dist[s]=0;
+        prev[s]=-1;
         int u=-1;
         boolean found=false;
         while(!queue.isEmpty() && !found){
@@ -117,15 +120,31 @@ public class BFS {
                 if(dist[vex]==-1){
                     queue.add(vex);
                     dist[vex]=dist[u]+1;
+                    prev[vex]=u;
                     if(vex==t){
                         found=true;
                     }
                 }
             }
         }
-        return dist[t];
+        if(!found){
+            return null;
+        }else{
+            return prev;
+        }
+
     }
 
+    private static String printPath(int u, int s, int[] prev){
+        LinkedList<Integer> result= new LinkedList<>();
+        while(u!=s){
+            result.add(0,u+1);
+            u=prev[u];
+        }
+        result.add(0,u+1);
+        return result.toString();
+
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
@@ -143,7 +162,13 @@ public class BFS {
         }
         int x = scanner.nextInt() - 1;
         int y = scanner.nextInt() - 1;
-        System.out.println(distance(adj, x, y));
+        int[] prev=distance(adj, x, y);
+        if(prev==null){
+            System.out.println("There is no path");
+        }else{
+            System.out.println(printPath(y,x,prev));
+        }
+
     }
 }
 

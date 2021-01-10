@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class BST implements Iterable{
     //Param
-    BSTNode root;
+   public BSTNode root;
 
     /**
      * Constructor
